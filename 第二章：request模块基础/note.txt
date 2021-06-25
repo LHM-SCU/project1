@@ -1,0 +1,52 @@
+requests模块
+    -urllib模块
+    -requests模块（重点）
+
+requests模块：python中原生的一款基于网络请求的模块，简单便捷，效率高
+作用：模拟浏览器发送请求
+
+如何使用：
+    -指定url
+    -发送请求
+    -获取响应数据
+    -持久化存储
+
+环境安装：
+    pip install request
+
+实战编码：
+    -需求：爬取搜狗首页的页面数据
+
+当请求后页面的url不发生变化为ajxs请求
+ 实战巩固
+    -需求：爬取搜狗指定词条对应的搜狗结果页面（简易网页采集器）
+        -UA检测
+        -UA伪装
+    -需求：破解百度翻译
+        -如何响应post请求（携带了参数）
+        -响应回来的是json数据
+    -需求：爬取豆瓣电影分类排行榜 https://movie.douban.com/中电影详情数据
+        -爬取局部信息
+    -需求：爬取肯德基餐厅查询 http://www.kfc.com.cn/kfccda/index.aspx中指定地点的餐厅数量
+    -需求：爬取国家药品监督管理总局中基于中华人民共和国化妆品生产许可证相关数据
+          http://scxk.nmpa.gov.cn:81/xk/
+          -数据可以动态加载
+          -在首页中的数据是ajax动态请求到的
+          http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=8bc468fcdb83488681c616d2f7c59149
+          http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=dae0094ca99a4016b5d51899013d4c11
+          url的域名都是一样的，只有携带的参数不一样（只有id不一样
+          id可以从首页对应的ajax请求到对应的json串中获取】
+          域名和id值拼接成一个完整的企业对应的详情页的url
+          -详情页面中数据也是动态加载出来的
+          http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById
+          http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById
+          -观察后发现：所有的post请求的url都是一样的，只有参数的id值不一样
+          -如果可以批量的获取多家企业的id后，就可以将id和url形成一个完整的详情页对应的数据
+
+ 数据解析：
+    聚焦爬虫：
+        -正则
+        -bs4
+        -xpath
+
+
